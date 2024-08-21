@@ -1,0 +1,9 @@
+.cart-box:hover .cart-zoom-image {
+  transform: scale(1.15);
+  transition: transform 0.6s ease-in-out;
+  border-radius: 0.125rem;
+}
+.cart-box:hover .add-to-card-btn {
+  display: flex !important;
+  transition: transform 0.6s ease-in-out;
+}

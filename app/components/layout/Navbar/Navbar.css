@@ -1,0 +1,25 @@
+.navbar-container {
+  transition: all 0.3s ease;
+  background-color: #1d19fa;
+  width: 100%;
+}
+
+.navbar-container.fixed {
+  position: fixed; /* Changed to fixed for better control */
+  top: 0; /* Stick to the top */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #1d19fa; /* Adjust as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+  padding: 0; /* Maintain padding consistency */
+}
+
+.navbar-container:not(.fixed) {
+  padding: 16px 0;
+}
+
+.transition-height {
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
