@@ -44,14 +44,14 @@ const Footer: React.FC = () => {
                   <input
                     id="q"
                     name="q"
-                    className="inline w-full justify-center items-center border-[1px] border-gray-400 placeholder:uppercase placeholder:text-[12px] md:placeholder:text-[12px]  bg-white pb-1 ps-2 h-[30px]  leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                    className="inline w-full justify-center items-center border-[1px] border-gray-400 placeholder:uppercase placeholder:text-[12px] md:placeholder:text-[12px]  bg-white pb-1 ps-2 h-[30px] md:h-[37px]  leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                     placeholder="Enter your email.."
                     type="text"
                     // value=""
                   />
                   <button
                     type="submit"
-                    className="ml-1 md:ml-2 inline-flex hover:bg-[#1D19FA] hover:text-white font-normal text-center justify-center text-[10px] sm:text-[12px] md:text-[12px] items-center border-[1px] border-gray-500 text-gray-500 rounded-xl h-[30px] w-[110px] md:w-[120px] "
+                    className="ml-1 md:ml-2 inline-flex hover:bg-[#1d19fafb] hover:text-white font-normal text-center justify-center text-[10px] sm:text-[12px] md:text-[12px] items-center border-[1px] border-gray-500 text-gray-500 rounded-xl h-[30px] md:h-[37px] w-[110px] md:w-[120px] "
                   >
                     SIGN UP
                   </button>

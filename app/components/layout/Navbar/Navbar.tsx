@@ -39,15 +39,17 @@ export const Navbar: React.FC = () => {
   // ----------Card Drawer functionality --------
 
   const [openDrawerbtn, setDrawerbtn] = useState<boolean>(false);
+  const [openDrawerbtnData, setDrawerbtnData] = useState<string>();
 
-  const toggleDrawerBtn = () => {
+  const toggleDrawerBtn = (data: any) => {
+    setDrawerbtnData(data);
     setDrawerbtn(!openDrawerbtn);
   };
 
   return (
     <>
-      <div>
-        <div className={`${isFixed ? "fixed" : ""} navbar-container`}>
+      <div className="">
+        <div className={`${isFixed ? "fixed" : ""} navbar-container relative`}>
           <div className="flex maxwidth mx-auto items-center justify-between">
             <div className="flex items-center gap-2 md:gap-5 w-[100%]">
               {/* -------search icon  ------- */}
@@ -106,8 +108,9 @@ export const Navbar: React.FC = () => {
                 </li>
                 <li className="link-text py-2 px-[1px] border-b-2 border-[#f6931e] border-opacity-0 hover:border-opacity-100 hover:text-[#f6931e] duration-300 cursor-pointer mx-[6px] md:mx-[10px]">
                   <Link
+                    onClick={() => toggleDrawerBtn("account")}
                     className="navar-text flex flex-col pt-1 justify-center items-center text-white uppercase Navbar-font"
-                    href="/wishlist"
+                    href=""
                   >
                     <span className="text-[10px] md:text-[12px] pb-[1px] text-gray-300 font-bold">
                       Hi
@@ -122,7 +125,7 @@ export const Navbar: React.FC = () => {
                   </Link>
                 </li>
                 <li
-                  onClick={toggleDrawerBtn}
+                  onClick={() => toggleDrawerBtn("cart")}
                   className="link-text py-2 px-[1px] border-b-2 border-[#f6931e] border-opacity-0 hover:border-opacity-100 hover:text-[#f6931e] duration-300 cursor-pointer mx-[6px] md:mx-[10px]"
                 >
                   <Link
@@ -216,34 +219,38 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-        {/* ---------------- Drawer Open Container  -------- */}
-        <div
-          className={`bg-[#E7DBBD]  transition-height duration-300 ease-in-out ${
-            openDrawerbtn
-              ? "h-[100vh] w-[600px] absolute right-0 top-0"
-              : "h-0 hidden"
-          }`}
-        >
-          <div className="relative mx-auto top-5">
-            <div className="absolute right-0 cursor-pointer inset-y-0 flex ">
-              <svg
-                width={"80"}
-                height={"80"}
-                onClick={toggleDrawerBtn}
-                xmlns="http://www.w3.org/2000/svg"
-                className="-ml-1 mr-3 h-5 w-5 text-gray-400 hover:text-gray-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+          {/* ---------------- Drawer Open Container  -------- */}
+          <div
+            className={` ${
+              isFixed ? "top-[60px]" : ""
+            } bg-[#E7DBBD] transition-height duration-300 ease-in-out ${
+              openDrawerbtn
+                ? "h-[100vh] w-[600px] absolute right-0 top-[92px] z-[10]"
+                : "h-0 hidden"
+            }`}
+          >
+            <div className="relative mx-auto top-5">
+              <div className="absolute right-0 cursor-pointer inset-y-0 flex ">
+                <svg
+                  width={"80"}
+                  height={"80"}
+                  onClick={toggleDrawerBtn}
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="-ml-1 mr-3 h-5 w-5 text-gray-400 hover:text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+              {openDrawerbtnData === "account" && <h1>CART</h1>}
+              {openDrawerbtnData === "cart" && <h1>Account</h1>}
             </div>
           </div>
         </div>
