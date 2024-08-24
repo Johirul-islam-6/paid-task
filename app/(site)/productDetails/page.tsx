@@ -2,7 +2,7 @@
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 
-import cartimage from "@/app/Assets/cart_image/NEW PRODUCT.png"; // Assuming this is a valid image import
+import cartimage from "@/app/Assets/cart_image/pin.png"; // Assuming this is a valid image import
 import Link from "next/link";
 import { Navbar } from "@/app/components/layout/Navbar/Navbar";
 
@@ -111,8 +111,8 @@ const ProductDetails = () => {
     <>
       <Navbar />
 
-      <div className="maxwidth mx-auto py-2 md:pt-3 pb-16 px-3 flex lg:flex-row flex-col gap-5 justify-center items-start md:justify-start">
-        <div className="left-site-container  lg:w-[220px]  px-1  relative">
+      <div className="maxwidth mx-auto py-2 md:py-8 pb-16 px-3 flex lg:flex-row flex-col gap-5 justify-center items-start md:justify-start">
+        <div className="left-site-container md:mt-8 lg:w-[220px]  px-1  relative">
           <h1 className="font-bold flex flex-wrap md:block gap-3 text-[13px] md:text-[17px]">
             <Link
               className=" md:pt-2 font-bold  md:text-[19px] text-[13px] hover:underline"
@@ -204,8 +204,11 @@ const ProductDetails = () => {
           {allCartItem.map((item, index) => (
             <div
               key={index}
-              className="md:w-[60%]  cursor-pointer rounded-md duration-700 ease-in-out  border-[2px] relative overflow-hidden"
+              className="md:w-[60%]  cursor-pointer rounded-md duration-700 ease-in-out  bor relative overflow-hidden"
             >
+              <h1 className="pb-4 text-start text-[14px] tracking-wider">
+                PREVIOUSLY BOUGHT ON AUG 8 2024
+              </h1>
               <div className="relative flex flex-col  justify-center items-center overflow-hidden ">
                 <div
                   className={`${
@@ -230,7 +233,7 @@ const ProductDetails = () => {
                     />
                   )}
                 </div>
-                <p className="pt-4 text-[16px] text-justify hidden md:block">
+                <p className="pt-4 text-[16px] text-justify hidden md:block tracking-wider">
                   Starborn® Structural F23 screws are designed for heavy duty
                   framing applications including decking, fencing, pergolas,
                   landscape timbers, timber framing, and more. They are fully
@@ -247,9 +250,9 @@ const ProductDetails = () => {
             </div>
           ))}
           {/* ---------------- product details ------------ */}
-          <div className="product-calculation md:w-[40%] md:ps-10">
+          <div className=" md:m-8 product-calculation md:w-[40%] md:ps-10">
             <div className="flex flex-col justify-start ">
-              <h1 className="font-bold text-[14px] md:text-[19px] ">
+              <h1 className="font-bold text-[14px] md:text-[19px]  ">
                 STRUCTURAL
               </h1>
               <h1 className="font-extrabold text-[14px] md:text-[16px] ">
@@ -257,7 +260,7 @@ const ProductDetails = () => {
               </h1>
               <div className="cart-text-container mt-5">
                 <div className="flex flex-col justify-start items-start gap-2">
-                  <p className="pt-2 font-[600] text-[12px] text-gray-600 uppercase">
+                  <p className="pt-2 font-[600] text-[12px] text-gray-600 uppercase tracking-wider">
                     Length
                   </p>
                   <div className="flex flex-wrap gap-2 justify-start items-center">
@@ -276,7 +279,7 @@ const ProductDetails = () => {
                     ))}
                   </div>
                   <div className="flex flex-col justify-start items-start gap-2 mt-2">
-                    <p className="font-[600] text-[12px] text-gray-600 uppercase">
+                    <p className="font-[600] text-[12px] text-gray-600 uppercase tracking-wider">
                       Item Package Quantity
                     </p>
                     <div className="flex flex-wrap gap-2 justify-start items-center">
@@ -296,7 +299,7 @@ const ProductDetails = () => {
                     </div>
                   </div>
                   <div className="flex flex-col justify-start items-start gap-2 mt-2">
-                    <p className="font-[600] text-[12px] flex items-center gap-2 text-gray-600 uppercase">
+                    <p className="font-[600] text-[12px] tracking-wider flex items-center gap-2 text-gray-600 uppercase">
                       Color: <span className="font-[700]">#34 BROWN</span>
                     </p>
                     <div className="flex flex-wrap gap-2 justify-start items-center md:pe-10">
@@ -316,10 +319,10 @@ const ProductDetails = () => {
                     </div>
                   </div>
                   <div className="flex flex-col justify-start items-start gap-2 mt-3">
-                    <p className="font-[600] text-[12px] text-gray-600 uppercase">
+                    <p className="font-[600] text-[12px] text-gray-600 uppercase tracking-wider">
                       Quantity
                     </p>
-                    <div className="flex items-center border-[1px] border-gray-400  rounded-md">
+                    <div className="flex h-[40px] w-[130px] justify-center  items-center border-[1px] border-gray-400  rounded-md">
                       <button
                         onClick={decrement}
                         className="px-2 py-1 text-[17px] font-bold text-gray-700 border-r-[1px] border-gray-400"
@@ -339,10 +342,10 @@ const ProductDetails = () => {
                   </div>
 
                   <div className="flex flex-col justify-start items-start gap-2 mt-5">
-                    <p className=" text-[15px] text-gray-900 uppercase">
+                    <p className=" text-[15px] text-gray-900 uppercase tracking-wider">
                       SKU : XF23CL0400
                     </p>
-                    <p className=" text-[15px] text-gray-800  uppercase">
+                    <p className=" text-[15px] text-gray-800  uppercase tracking-wider">
                       Subtotal :
                     </p>
                     <p className=" text-[20px] font-bold text-gray-900 uppercase">
@@ -354,13 +357,13 @@ const ProductDetails = () => {
                     {" "}
                     <button
                       onClick={() => activeClickBtn(0)}
-                      className="border-[1px]  hover:bg-[#1D19FA] hover:text-white border-gray-400 text-[13px] font-medium text-gray-700 px-[15px] py-[10px] p-1 rounded-[15px]"
+                      className="border-[1px]  hover:bg-[#1D19FA] hover:text-white border-gray-400 text-[13px] font-medium text-gray-700 px-[15px] py-[12px] p-1 rounded-[10px]"
                     >
                       ADD TO CART
                     </button>
                     <Link href={"/"}>
                       {" "}
-                      <button className="border-[1px]  bg-[#e6ce92] text-black border-gray-400 hover:bg-transparent text-[13px] font-medium px-[15px] py-[10px] p-1 rounded-[15px]">
+                      <button className="border-[1px]  bg-[#e6ce92] text-black border-gray-400 hover:bg-transparent text-[13px] font-medium px-[15px] py-[12px] p-1 rounded-[10px]">
                         Check Out
                       </button>
                     </Link>

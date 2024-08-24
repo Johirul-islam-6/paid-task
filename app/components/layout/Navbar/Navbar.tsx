@@ -8,8 +8,10 @@ import "./Navbar.css";
 import logo from "@/app/Assets/navbar/logo.png";
 import love from "@/app/Assets/navbar/love.png";
 import account from "@/app/Assets/navbar/account.png";
-import cart from "@/app/Assets/navbar/cart.png";
+
 import search from "@/app/Assets/navbar/search.png";
+import { ShopingCart } from "./ShopingCart";
+import { Account } from "./Account";
 
 export const Navbar: React.FC = () => {
   const [isFixed, setIsFixed] = useState<boolean>(false);
@@ -133,7 +135,7 @@ export const Navbar: React.FC = () => {
                     href=""
                   >
                     <span className="text-[10px] md:text-[12px]  text-gray-300 font-bold">
-                      4
+                      3
                     </span>
                     <span className="hidden md:flex">
                       <svg
@@ -165,7 +167,7 @@ export const Navbar: React.FC = () => {
 
           {/* --------- searching input field open -------- */}
           <div
-            className={`bluecolor flex justify-center mx-3 md:mx-0 items-center transition-height duration-300 ease-in-out ${
+            className={`bluecolor bg-[#1d19fa01] flex justify-center mx-3 md:mx-0 items-center transition-height duration-300 ease-in-out ${
               openSearchingbtn ? "h-[100px]" : "h-0"
             }`}
           >
@@ -222,21 +224,21 @@ export const Navbar: React.FC = () => {
           {/* ---------------- Drawer Open Container  -------- */}
           <div
             className={` ${
-              isFixed ? "top-[60px]" : ""
+              isFixed ? "top-[59px]" : ""
             } bg-[#E7DBBD] transition-height duration-300 ease-in-out ${
               openDrawerbtn
-                ? "h-[100vh] w-[600px] absolute right-0 top-[92px] z-[10]"
+                ? "pb-12 md:w-[450px] absolute right-0 top-[92px] z-[10]"
                 : "h-0 hidden"
             }`}
           >
-            <div className="relative mx-auto top-5">
-              <div className="absolute right-0 cursor-pointer inset-y-0 flex ">
+            <div className="relative mx-auto top-0">
+              <div className=" justify-end right-0 cursor-pointer inset-y-0 flex pt-2">
                 <svg
-                  width={"80"}
-                  height={"80"}
+                  width={"85"}
+                  height={"85"}
                   onClick={toggleDrawerBtn}
                   xmlns="http://www.w3.org/2000/svg"
-                  className="-ml-1 mr-3 h-5 w-5 text-gray-400 hover:text-gray-500"
+                  className="-ml-1 mr-3 h-6 w-6 text-gray-400 hover:text-gray-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -249,8 +251,9 @@ export const Navbar: React.FC = () => {
                   />
                 </svg>
               </div>
-              {openDrawerbtnData === "account" && <h1>CART</h1>}
-              {openDrawerbtnData === "cart" && <h1>Account</h1>}
+
+              {openDrawerbtnData === "account" && <Account />}
+              {openDrawerbtnData === "cart" && <ShopingCart />}
             </div>
           </div>
         </div>
