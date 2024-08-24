@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                   <input
                     id="q"
                     name="q"
-                    className="inline w-full justify-center items-center border-[1px] border-gray-400 placeholder:uppercase placeholder:text-[12px] md:placeholder:text-[12px]  bg-white pb-1 ps-2 h-[30px] md:h-[37px]  leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                    className="inline w-full justify-center items-center border-[1px] border-gray-400 placeholder:uppercase placeholder:text-[12px] md:placeholder:text-[12px]  bg-transparent pb-1 ps-2 h-[30px] md:h-[37px]  leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                     placeholder="Enter your email.."
                     type="text"
                     // value=""
